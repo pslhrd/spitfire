@@ -1,0 +1,31 @@
+@font-face {
+	font-family: 'Minotaur Regular';
+	src: url('/minotaurweb-regular.127101b7.woff') format('WOFF')
+}
+
+@font-face {
+	font-family: 'Minotaur Light';
+	src: url('/minotaurweb-light.f27f5b52.woff') format('WOFF')
+}
+
+@font-face {
+	font-family: 'Minotaur Bold';
+	src: url('/minotaurweb-bold.e7ed44b6.woff') format('WOFF')
+}
+
+@font-face {
+	font-family: 'Minotaur Sans Regular';
+	src: url('/minotaursansweb-regular.595aa9d6.woff') format('WOFF')
+}
+
+@font-face {
+	font-family: 'Minotaur Sans Light';
+	src: url('/minotaursansweb-light.6ddc5699.woff') format('WOFF')
+}
+
+@font-face {
+	font-family: 'Minotaur Sans Bold';
+	src: url('/minotaursansweb-bold.eaee55f2.woff') format('WOFF')
+}
+
+/*# sourceMappingURL=/fonts.b7327172.css.map */
