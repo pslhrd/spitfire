@@ -11,8 +11,9 @@ export default function startCanvas () {
   renderer.pixelRatio = 2
   scene.background = new Color(0x000000)
 
-  let showAll = false
+  let camNum = 0
   let ratio = 10
+  let a = 0
 
   const { composer } = fx({ renderer, scene, camera })
 
@@ -47,11 +48,18 @@ export default function startCanvas () {
       plane.object.children.forEach(part => { part.children.forEach(part => { part.position.set(0, 2.9, -0.1) }) })
     })
 
+    const ratios = [3, 3, 10]
+    const xs = [2, 4, 2]
+    const ys = [0.5, -10, 0.5]
+    const zs = [5, 10, 5]
+    const as = [0, 0, 2]
+
     raf.subscribe((time) => {
-      ratio = lerp(ratio, showAll ? 3 : 10, 0.1)
-      camera.position.x = lerp(camera.position.x, showAll ? 4 : 2, 0.1)
-      camera.position.y = lerp(camera.position.y, showAll ? -10 : 0.5, 0.1)
-      camera.position.z = lerp(camera.position.z, showAll ? 10 : 5, 0.1)
+      ratio = lerp(ratio, ratios[camNum], 0.1)
+      a = lerp(a, as[camNum], 0.1)
+      camera.position.x = lerp(camera.position.x, xs[camNum], 0.1)
+      camera.position.y = lerp(camera.position.y, ys[camNum], 0.1)
+      camera.position.z = lerp(camera.position.z, zs[camNum], 0.1)
 
       camera.lookAt(0, 0, 0)
 
@@ -68,7 +76,7 @@ export default function startCanvas () {
           },
           position: {
             x: i * ratio - ratio,
-            y: 0,
+            y: -Math.abs(i * a - a),
             z: -Math.abs(i * 2 - 2)
           }
         }
@@ -118,7 +126,8 @@ export default function startCanvas () {
   })
 
   return {
-    showAll: function () { showAll = true },
-    hideAll: function () { showAll = false }
+    nextCam: function () {
+      camNum = (camNum + 1) % 3
+    }
   }
 }

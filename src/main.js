@@ -57,16 +57,8 @@ function homeLaunch () {
   const planes = startCanvas1()
   startCanvas2()
 
-  let menuOpen = false
-
   document.querySelector('#openMenu').addEventListener('click', () => {
-    menuOpen = !menuOpen
-
-    if (menuOpen) {
-      planes.showAll()
-    } else {
-      planes.hideAll()
-    }
+    planes.nextCam()
   })
 
   imgLoad.on('done', function (instance) {
