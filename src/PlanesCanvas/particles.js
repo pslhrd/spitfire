@@ -12,7 +12,7 @@ export default function createParticles (color) {
 
   const data = []
   let vertices = []
-  for (let i = 0; i < 1500; i++) {
+  for (let i = 0; i < 400; i++) {
     const pos = Math.random() * Math.PI * 2
     const dist = Math.random() / Math.random() * 1
     data.push({

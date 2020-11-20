@@ -18,12 +18,6 @@
 </head>
 <body>
 
-  <header>
-    <div class="flex-wrapper">
-      <div class="logo"><a href="#">Spitfire</a></div>
-      <div class="menu"><button id="openMenu">Menu</button></div>
-    </div>
-  </header>
 
   <div class="preloader">
     <div class="loading">
@@ -34,7 +28,21 @@
   </div>
 
   <main  data-scroll-container>
+
+  <header>
+    <div class="flex-wrapper">
+      <div class="logo"><a href="#">Spitfire</a></div>
+      <div class="menu"><button id="openMenu">CAMERA</button></div>
+    </div>
+  </header>
+
     <div class="hero">
+      <div class="hero-title" data-scroll data-scroll-speed='-2'>
+        <div class="overflow"><span class="italic">The story of</span></div>
+        <div class="overflow"><span>THE SUPERMARINE</span></div>
+        <div class="overflow"><span>SPITFIRE</span></div>
+      </div>
+      <div class="gradient"></div>
       <canvas id="planes"></canvas>
     </div>
     <div class="history" data-scroll>

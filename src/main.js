@@ -12,6 +12,10 @@ const imgLoad = imagesLoaded(body)
 
 var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight)
 
+gsap.set('.overflow span', { y: '100%' })
+gsap.set('[data-scroll-call="opacity"]', { opacity: 0, y: 50 })
+gsap.set('[data-scroll-call="image"]', { autoAlpha: 0 })
+
 function smooth (container) {
   scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
@@ -71,20 +75,13 @@ function homeLaunch () {
     body.style.cursor = 'default'
     console.log(imgLoad.images.length + ' images loaded')
 
-    if (isMobile.any() === null) {
-      console.log('Not Mobile')
-    } else {
-      console.log(isMobile.any())
-    }
+    gsap.to('.hero-title span', {y:'0%', duration:1.4, stagger:0.1, ease:'power3.out'}, 1)
   })
 }
 
 homeLaunch()
 
 function homeScroll () {
-  gsap.set('.overflow span', { y: '100%' })
-  gsap.set('[data-scroll-call="opacity"]', { opacity: 0, y: 50 })
-  gsap.set('[data-scroll-call="image"]', { autoAlpha: 0 })
 
   scroll.on('call', function (event, element, i) {
     if (event === 'appear') {

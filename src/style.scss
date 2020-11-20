@@ -166,7 +166,8 @@ body {
   }
 
   header {
-    position: fixed;
+    position: absolute;
+    top: 0;
     z-index: 50;
     width: 100vw;
     font-size: 14px;
@@ -203,6 +204,40 @@ body {
   .hero {
     width: 100vw;
     height: 100vh;
+    position: relative;
+
+    &-title {
+
+      .italic {
+        font-size: 16px;
+        margin-bottom: 5px;
+        font-family: $font-serif;
+        font-style: italic;
+      }
+      position: absolute;
+      bottom: 5vw;
+      left: 12.65vw;
+      z-index: 50;
+      font-size: 36px;
+      line-height: 40px;
+      font-family: $font-sans-light;
+
+      @include mobile {
+        font-size: 24px;
+        line-height: 30px;
+        bottom: 60px;
+      }
+    }
+
+    .gradient {
+      position: absolute;
+      z-index: 20;
+      bottom: 0;
+      left: 0;
+      height: 30%;
+      width: 100vw;
+      background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(0,0,0,1));
+    }
 
     canvas {
       width: 100vw;
@@ -631,10 +666,11 @@ body {
     width: 100vw;
     padding-top: 13vw;
     padding-bottom: 13vw;
-    height: 120vh;
+    height: 80vh;
 
     @include mobile {
       padding-top: 100px;
+      height: 100vh;
     }
 
 
