@@ -48,10 +48,10 @@ export default function startCanvas () {
       plane.object.children.forEach(part => { part.children.forEach(part => { part.position.set(0, 2.9, -0.1) }) })
     })
 
-    const ratios = [10, 3, 3]
-    const xs = [2, 4, 2]
-    const ys = [0.5, -10, 0.5]
-    const zs = [5, 10, 5]
+    const ratios = [10, 3, 2]
+    const xs = [2, 4, -2]
+    const ys = [0.5, -10, 4]
+    const zs = [5, 10, 8]
     const as = [0, 0, 2]
 
     raf.subscribe((time) => {
