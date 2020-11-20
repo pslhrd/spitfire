@@ -1,4 +1,4 @@
-import { init } from './utils'
+import { init, lerp } from './utils'
 import raf from './raf'
 import Plane from './Plane'
 import fx from './effects'
@@ -11,11 +11,14 @@ export function startCanvas () {
   renderer.pixelRatio = 2
   scene.background = new Color(0x000000)
 
+  let showAll = false
+  let ratio = 10
+
   const { composer } = fx({ renderer, scene, camera })
 
   camera.position.z = 5
-  camera.position.x = -2
-  camera.position.y = 1
+  camera.position.x = 2
+  camera.position.y = 0.5
 
   const planes = [
     new Plane({
@@ -45,6 +48,11 @@ export function startCanvas () {
     })
 
     raf.subscribe((time) => {
+      ratio = lerp(ratio, showAll ? 3 : 10, 0.1)
+      camera.position.x = lerp(camera.position.x, showAll ? 4 : 2, 0.1)
+      camera.position.y = lerp(camera.position.y, showAll ? -10 : 0.5, 0.1)
+      camera.position.z = lerp(camera.position.z, showAll ? 10 : 5, 0.1)
+
       camera.lookAt(0, 0, 0)
 
       const rpm = 200
@@ -59,9 +67,9 @@ export function startCanvas () {
             z: 0
           },
           position: {
-            x: i * 10 - 10,
+            x: i * ratio - ratio,
             y: 0,
-            z: 0
+            z: -Math.abs(i * 2 - 2)
           }
         }
 
@@ -110,7 +118,7 @@ export function startCanvas () {
   })
 
   return {
-    showAll: function () {},
-    hideAll: function () {}
+    showAll: function () { showAll = true },
+    hideAll: function () { showAll = false }
   }
 }
