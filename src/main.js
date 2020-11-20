@@ -1,7 +1,8 @@
 import gsap from 'gsap'
 import LocomotiveScroll from 'locomotive-scroll'
 import imagesLoaded from 'imagesloaded'
-import { startCanvas } from './PlanesCanvas/PlanesCanvas'
+import startCanvas1 from './PlanesCanvas/PlanesCanvas'
+import startCanvas2 from './PlanesCanvas/SpecsPlane'
 
 const body = document.body
 const main = document.querySelector('main')
@@ -50,7 +51,8 @@ function homeLaunch () {
     // console.log( 'image is ' + result + ' for ' + image.img.src );
   })
 
-  const planes = startCanvas()
+  const planes = startCanvas1()
+  startCanvas2()
 
   let menuOpen = false
 

@@ -6,8 +6,8 @@ import spitfireModel from '../assets/models/spitfire-mesh.glb'
 import createParticles from './particles'
 import { Color } from 'three'
 
-export function startCanvas () {
-  const { camera, renderer, scene } = init(document.querySelector('#planes'))
+export default function startCanvas () {
+  const { camera, renderer, scene } = init(document.querySelector('#planes'), false)
   renderer.pixelRatio = 2
   scene.background = new Color(0x000000)
 
