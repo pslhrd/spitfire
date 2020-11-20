@@ -16,6 +16,9 @@ body {
   background-color: var(--c-bg);
   color: var(--c-fg);
 }
+body canvas {
+  outline: none;
+}
 body a, body button {
   font-family: "Minotaur Sans Regular";
   cursor: pointer;
@@ -123,7 +126,8 @@ body .labor {
   }
 }
 body header {
-  position: fixed;
+  position: absolute;
+  top: 0;
   z-index: 50;
   width: 100vw;
   font-size: 14px;
@@ -158,6 +162,38 @@ body header .menu {
 body .hero {
   width: 100vw;
   height: 100vh;
+  position: relative;
+}
+body .hero-title {
+  position: absolute;
+  bottom: 5vw;
+  left: 12.65vw;
+  z-index: 50;
+  font-size: 36px;
+  line-height: 40px;
+  font-family: "Minotaur Sans Light";
+}
+body .hero-title .italic {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-family: "Minotaur Regular";
+  font-style: italic;
+}
+@media (max-width: 900px) {
+  body .hero-title {
+    font-size: 24px;
+    line-height: 30px;
+    bottom: 60px;
+  }
+}
+body .hero .gradient {
+  position: absolute;
+  z-index: 20;
+  bottom: 0;
+  left: 0;
+  height: 30%;
+  width: 100vw;
+  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), black);
 }
 body .hero canvas {
   width: 100vw;
@@ -284,9 +320,9 @@ body .specs {
 body .specs canvas {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 20vw;
   width: 100vw;
-  height: 100%;
+  height: 61vw;
 }
 @media (max-width: 900px) {
   body .specs {
@@ -581,11 +617,12 @@ body .credits {
   width: 100vw;
   padding-top: 13vw;
   padding-bottom: 13vw;
-  height: 120vh;
+  height: 80vh;
 }
 @media (max-width: 900px) {
   body .credits {
     padding-top: 100px;
+    height: 100vh;
   }
 }
 body .credits .flex {
