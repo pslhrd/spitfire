@@ -20,8 +20,7 @@ function smooth (container) {
   scroll = new LocomotiveScroll({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true,
-    smoothMobile: false,
-    offset: ['20%', 0]
+    smoothMobile: false
   })
 }
 
