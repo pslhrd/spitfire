@@ -16,7 +16,9 @@ body {
   background-color: var(--c-bg);
   color: var(--c-fg);
 }
-body a {
+body a, body button {
+  font-family: "Minotaur Sans Regular";
+  cursor: pointer;
   text-transform: uppercase;
   text-decoration: none;
   color: currentColor;
