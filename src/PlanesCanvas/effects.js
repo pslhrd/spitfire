@@ -7,7 +7,7 @@ import { Vector2 } from 'three'
 
 export default function composer ({ renderer, scene, camera }) {
   const composer = new EffectComposer(renderer)
-  const bloomFx = new UnrealBloomPass(new Vector2(window.innerWidth * 2, window.innerHeight * 2), 0.5, 0.01, 0)
+  const bloomFx = new UnrealBloomPass(new Vector2(window.innerWidth * 2, window.innerHeight * 2), 0.35, 0.01, 0)
   // const fxaa = new ShaderPass(FXAAShader)
   composer.setSize(window.innerWidth * 2, window.innerHeight * 2)
   composer.addPass(new RenderPass(scene, camera))
