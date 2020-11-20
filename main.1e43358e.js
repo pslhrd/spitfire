@@ -50853,7 +50853,7 @@ function composer(_ref) {
       scene = _ref.scene,
       camera = _ref.camera;
   var composer = new _EffectComposer.EffectComposer(renderer);
-  var bloomFx = new _UnrealBloomPass.UnrealBloomPass(new _three.Vector2(window.innerWidth * 2, window.innerHeight * 2), 0.5, 0.01, 0); // const fxaa = new ShaderPass(FXAAShader)
+  var bloomFx = new _UnrealBloomPass.UnrealBloomPass(new _three.Vector2(window.innerWidth * 2, window.innerHeight * 2), 0.35, 0.01, 0); // const fxaa = new ShaderPass(FXAAShader)
 
   composer.setSize(window.innerWidth * 2, window.innerHeight * 2);
   composer.addPass(new _RenderPass.RenderPass(scene, camera));
@@ -50890,7 +50890,7 @@ function createParticles(color) {
   var data = [];
   var vertices = [];
 
-  for (var i = 0; i < 400; i++) {
+  for (var i = 0; i < 100; i++) {
     var pos = Math.random() * Math.PI * 2;
     var dist = Math.random() / Math.random() * 1;
     data.push({
@@ -51159,8 +51159,7 @@ function smooth(container) {
   scroll = new _locomotiveScroll.default({
     el: document.querySelector('[data-scroll-container]'),
     smooth: true,
-    smoothMobile: false,
-    offset: ['20%', 0]
+    smoothMobile: false
   });
 }
 
@@ -51283,7 +51282,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59316" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60408" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
