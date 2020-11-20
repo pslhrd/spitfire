@@ -364,10 +364,16 @@ body {
 
     canvas {
       position: absolute;
-      top: 0;
+      top: calc(50% - 50vh);
       left: 20vw;
       width: 100vw;
-      height: 61vw;
+      height: 100vh;
+
+      cursor: grab;
+
+      &:focus {
+        cursor: grabbing;
+      }
     }
 
     @include mobile {
