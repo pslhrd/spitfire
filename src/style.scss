@@ -1,11 +1,585 @@
+$c-set-bg: #000000;
+$c-set-fg: #F0F0F0;
+
+:root {
+  --c-bg: #{$c-set-bg};
+  --c-fg: #{$c-set-fg};
+}
+
+$c-bg: var(--c-bg);
+$c-fg: var(--c-fg);
+
+$ease-out: cubic-bezier(.165,.84,.44,1);
+$font-serif: 'Minotaur Regular';
+$font-sans: 'Minotaur Sans Regular';
+$font-sans-light: 'Minotaur Sans Light';
+$sub: #777777;
+
+$main: 16px;
+$title: 11.45vw;
+$title-line: 10.9375vw;
+
+$medium: 50px;
+$medium-line: 65px;
+$labor: 16px;
+$labor-line: 26px;
+
+@mixin mobile {
+  @media (max-width: 900px) { @content; }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
+  width: 100vw;
   margin: 0;
-  font-family: Helvetica, sans-serif;
+  overflow-x: hidden;
+  background-color: $c-bg;
+  color: $c-fg;
 
-  > div {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px;
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: currentColor;
+    background: none;
+    border: none;
+    padding: 0;
+  }
+
+  span {
+    display: block;
+  }
+
+  .overflow {
+    overflow: hidden;
+  }
+
+  .medium {
+    width: 625px;
+    font-size: $medium;
+    line-height: $medium-line;
+    font-family: $font-serif;
+
+    @include mobile {
+      width: 74vw;
+      font-size: 26px;
+      line-height: 34px;
+    }
+  }
+
+  .labor {
+    width: 550px;
+    font-size: $labor;
+    line-height: $labor-line;
+    font-family: $font-sans-light;
+
+    @include mobile {
+      width: 74vw;
+    }
+  }
+
+  header {
+    position: fixed;
+    z-index: 50;
+    width: 100vw;
+    font-size: 14px;
+    font-family: $font-sans-light;
+    text-transform: uppercase;
+
+    .flex-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      margin-top: 4.16666vw;
+      margin-left: 4.16666vw;
+
+      @include mobile {
+        margin-top: 40px;
+        margin-left: 30px;
+      }
+    }
+
+    .menu {
+      margin-top: 4.16666vw;
+      margin-right: 4.16666vw;
+
+      @include mobile {
+        margin-top: 40px;
+        margin-right: 30px;
+      }
+    }
+  }
+
+  .hero {
+    width: 100vw;
+    height: 100vh;
+
+    canvas {
+      width: 100vw;
+      height: 100vh;
+    }
+  }
+
+  .history {
+    margin-top: 18.75vw;
+
+    @include mobile {
+      margin-top: 100px;
+    }
+
+    &-title {
+      text-align: center;
+      width: 62.5vw;
+      margin-left: 18.75vw;
+
+      @include mobile {
+        width: 74vw;
+        margin-left: 13vw;
+      }
+
+      .title {
+        font-size: $title;
+        line-height: $title-line;
+        font-family: $font-sans;
+
+        @include mobile {
+          font-size: 60px;
+          line-height: 60px;
+        }
+      }
+
+      .sub {
+        font-size: $main;
+        color: $sub;
+        font-family: $font-serif;
+        margin-bottom: 4.1666vw;
+
+        @include mobile {
+          margin-bottom: 30px;
+        }
+      }
+    }
+    &-content {
+      margin-top: 18.75vw;
+      margin-left: 16.927vw;
+
+      @include mobile {
+        margin-left: 13vw;
+        margin-top: 100px;
+      }
+
+      .medium {
+        margin-bottom: 3.6458vw;
+        @include mobile {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+  .highlight {
+    position: relative;
+    margin-top: 13vw;
+    padding-top: 13vw;
+    padding-bottom: 13vw;
+    background-color: #161616;
+
+    @include mobile {
+      margin-top: 100px;
+      padding-top: 100px;
+      padding-bottom: 100px;
+    }
+
+    &-img {
+      top: -10%;
+      right: 8.4375vw;
+      position: absolute;
+      width: 41vw;
+      height: 56vw;
+
+      @include mobile {
+        top: -14%;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-content {
+      padding-left: 13.28vw;
+      font-family: $font-sans;
+      text-transform: uppercase;
+      font-size: $title;
+      line-height: $title-line;
+
+      @include mobile {
+        padding-left: 13vw;
+        font-size: 45px;
+        line-height: 45px;
+      }
+
+      .sub {
+        font-size: $main;
+        line-height: $labor-line;
+        color: $sub;
+        font-family: $font-sans-light;
+        text-transform: uppercase;
+        margin-top: 4.1666vw;
+      }
+    }
+  }
+
+  .specs {
+    position: relative;
+    padding-top: 18.75vw;
+    padding-left: 13.28vw;
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100%;
+    }
+
+    @include mobile {
+      padding-top: 100px;
+      padding-left: 13vw;
+    }
+
+    &-numbers {
+
+      width: 350px;
+      margin-bottom: 18.75vw;
+
+      @include mobile {
+        width: 73vw;
+        margin-bottom: 100px;
+      }
+
+      .inline {
+        display: inline-block;
+      }
+
+      .number {
+        width: 45%;
+        margin-bottom: 60px;
+
+        @include mobile {
+          margin-bottom: 40px;
+        }
+      }
+
+      .inline {
+        display: inline-block;
+      }
+      .title {
+        color: $sub;
+        text-transform: uppercase;
+        font-family: $font-sans-light;
+        font-size: $labor;
+        line-height: $labor-line;
+      }
+      .content {
+        text-transform: uppercase;
+        font-family: $font-sans-light;
+        font-size: $labor;
+        line-height: $labor-line;
+      }
+    }
+
+    .spec {
+      width: 470px;
+      margin-bottom: 18.75vw;
+
+      @include mobile {
+        width: 74vw;
+        margin-bottom: 100px;
+      }
+      .title {
+        color: $sub;
+        text-transform: uppercase;
+        font-family: $font-sans-light;
+        font-size: $labor;
+        line-height: $labor-line;
+        margin-bottom: 30px;
+      }
+      .content {
+        font-family: $font-serif;
+        font-size: 34px;
+        line-height: 46px;
+
+        @include mobile {
+          font-size: 24px;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+  .design {
+    &-img {
+      width: 100vw;
+      height: 110vh;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &-content {
+      padding-top: 18.75vw;
+      padding-left: 46.35vw;
+
+      @include mobile {
+        padding-left: 13vw;
+        padding-top: 100px;
+      }
+      .medium {
+        margin-bottom: 3.6458vw;
+        @include mobile {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  .britain {
+    margin-top: 18.75vw;
+
+    @include mobile {
+      margin-top: 100px;
+    }
+
+    &-title {
+      width: 62.5vw;
+      margin-left: 18.75vw;
+
+      @include mobile {
+        width: 73vw;
+        margin-left: 13vw;
+      }
+
+      .title {
+        font-size: $title;
+        line-height: $title-line;
+        font-family: $font-sans;
+        text-transform: uppercase;
+
+        @include mobile {
+          font-size: 60px;
+          line-height: 60px;
+        }
+      }
+
+      .sub {
+        font-size: $main;
+        color: $sub;
+        font-family: $font-serif;
+        margin-bottom: 4.1666vw;
+
+        @include mobile {
+          margin-bottom: 30px;
+        }
+      }
+    }
+    &-content {
+      position: relative;
+      margin-top: 18.75vw;
+      background-color: #161616;
+      padding-top: 60vw;
+      padding-bottom: 13vw;
+
+      @include mobile {
+        margin-top: 100px;
+        padding-top: 70vh;
+        padding-bottom: 100px;
+      }
+
+      .text {
+        margin-left: 16.927vw;
+
+        @include mobile {
+          margin-left: 13vw;
+        }
+
+        .medium {
+          margin-bottom: 3.6458vw;
+          @include mobile {
+            margin-bottom: 40px;
+          }
+        }
+      }
+
+      .img {
+        .left {
+          top: -8%;
+          left: 22.13vw;
+
+          @include mobile {
+            left: 13vw;
+            top: -4%;
+          }
+        }
+        .right {
+          top: 20%;
+          right: 8.33vw;
+
+          @include mobile {
+            right: 0;
+            top: 15%;
+          }
+        }
+
+        &-wrapper {
+          position: absolute;
+          width: 40.88vw;
+          height: 55.72vw;
+
+          @include mobile {
+            width: 60vw;
+            height: 80vw;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  .dday {
+
+    margin-top: 18.75vw;
+
+    &-title {
+      width: 62.5vw;
+      margin-left: 18.75vw;
+
+      @include mobile {
+        width: 73vw;
+        margin-left: 13vw;
+      }
+
+      .title {
+        font-size: $title;
+        line-height: $title-line;
+        font-family: $font-sans;
+        text-transform: uppercase;
+
+        @include mobile {
+          font-size: 60px;
+          line-height: 60px;
+        }
+      }
+
+      .sub {
+        font-size: $main;
+        color: $sub;
+        font-family: $font-serif;
+        margin-bottom: 4.1666vw;
+      }
+    }
+
+    &-content {
+      padding-top: 18.75vw;
+      padding-left: 46.35vw;
+      margin-bottom: 18.75vw;
+
+      @include mobile {
+        padding-top: 100px;
+        padding-left: 13vw;
+        margin-bottom: 100px;
+      }
+
+      .medium {
+        margin-bottom: 3.6458vw;
+        @include mobile {
+          margin-bottom: 40px;
+        }
+      }
+    }
+
+    &-imgs {
+      position: relative;
+
+      .floating {
+        position: absolute;
+        width: 23vw;
+        height: 30vw;
+        left: 12.5vw;
+        top: -30%;
+
+        @include mobile {
+          display: none;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .fullscreen {
+        width: 100vw;
+        height: 110vh;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  .credits {
+    width: 100vw;
+    padding-top: 13vw;
+    padding-bottom: 13vw;
+
+
+    .flex {
+      width: 66vw;
+      margin-left: 17vw;
+      display: flex;
+    }
+
+    &-title {
+      margin-bottom: 10.41vw;
+      width: 100%;
+      margin-left: 16.82vw;
+    }
+
+    &-sources {
+      width: 50%;
+      a {
+        display: block;
+        font-family: $font-sans-light;
+        font-size: $labor;
+        line-height: $labor-line;
+      }
+    }
+
+    &-dev {
+      width: 50%;
+      span {
+        margin-bottom: 16px;
+      }
+    }
+
+    .sub {
+      font-size: $main;
+      color: $sub;
+      font-family: $font-sans-light;
+      margin-bottom: 30px;
+    }
   }
 }
