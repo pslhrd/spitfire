@@ -50990,10 +50990,10 @@ function startCanvas() {
         });
       });
     });
-    var ratios = [10, 3, 3];
-    var xs = [2, 4, 2];
-    var ys = [0.5, -10, 0.5];
-    var zs = [5, 10, 5];
+    var ratios = [10, 3, 2];
+    var xs = [2, 4, -2];
+    var ys = [0.5, -10, 4];
+    var zs = [5, 10, 8];
     var as = [0, 0, 2];
 
     _raf.default.subscribe(function (time) {
@@ -51279,7 +51279,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60834" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60891" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
