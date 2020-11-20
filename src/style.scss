@@ -41,7 +41,9 @@ body {
   background-color: $c-bg;
   color: $c-fg;
 
-  a {
+  a, button {
+    font-family: $font-sans;
+    cursor: pointer;
     text-transform: uppercase;
     text-decoration: none;
     color: currentColor;
