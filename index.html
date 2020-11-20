@@ -21,40 +21,51 @@
     </div>
   </header>
 
-  <main>
+  <div class="preloader">
+    <div class="loading">
+      <div class="loading-square1"></div>
+      <div class="loading-square2"></div>
+      <div class="loading-square3"></div>
+    </div>
+  </div>
+
+  <main  data-scroll-container>
     <div class="hero">
       <canvas id="planes"></canvas>
     </div>
-    <div class="history">
+    <div class="history" data-scroll>
       <div class="history-title">
-        <div class="sub overlow"><span>Document 01 - History</span></div>
+        <div class="overlow sub" data-scroll data-scroll-call='appear'><span>Document 01 - History</span></div>
         <div class="title">
-          <div class="overflow"><span>1945</span></div>
-          <div class="overflow"><span>REPORT,</span></div>
-          <div class="overflow"><span>HISTORY</span></div>
-          <div class="overflow"><span>OF THE</span></div>
-          <div class="overflow"><span>PLANE</span></div>
+          <div class="overflow" data-scroll data-scroll-call='appear'><span>1945</span></div>
+          <div class="overflow" data-scroll data-scroll-call='appear'><span>REPORT,</span></div>
+          <div class="overflow" data-scroll data-scroll-call='appear'><span>HISTORY</span></div>
+          <div class="overflow" data-scroll data-scroll-call='appear'><span>OF THE</span></div>
+          <div class="overflow" data-scroll data-scroll-call='appear'><span>PLANE</span></div>
         </div>
       </div>
       <div class="history-content">
-        <p class="medium">Spitfire, also called Supermarine Spitfire, the most widely produced and strategically important British single-seat fighter of World War II.</p>
-        <p class="labor">The Spitfire was designed by Reginald Mitchell of Supermarine Ltd., in response to a 1934 Air Ministry specification calling for a high-performance fighter with an armament of eight wing-mounted 0.303-inch (7.7-mm) machine guns.</p>
+        <p class="medium" data-scroll data-scroll-call='opacity'>Spitfire, also called Supermarine Spitfire, the most widely produced and strategically important British single-seat fighter of World War II.</p>
+        <p class="labor" data-scroll data-scroll-call='opacity'>The Spitfire was designed by Reginald Mitchell of Supermarine Ltd., in response to a 1934 Air Ministry specification calling for a high-performance fighter with an armament of eight wing-mounted 0.303-inch (7.7-mm) machine guns.</p>
       </div>
     </div>
     <div class="highlight">
-      <div class="highlight-img">
+      <div class="highlight-img" data-scroll data-scroll-speed='1.8'>
         <img src="./src/assets/images/highlight.png">
       </div>
-      <div class="highlight-content">
-        <div class="overflow"><span>The Plane</span></div>
-        <div class="overflow"><span>That Crushed Hitler's</span></div>
-        <div class="overflow"><span>Dreams of</span></div>
-        <div class="overflow"><span>Conquest.</span></div>
-        <div class="sub overflow"><span>nationalinterest.org</span></div>
+      <div class="highlight-content" data-scroll data-scroll-speed='-1' data-scroll-call='appear'>
+        <div class="overflow" data-scroll data-scroll-call='appear'><span>The Plane</span></div>
+        <div class="overflow" data-scroll data-scroll-call='appear'><span>That</span></div>
+        <div class="overflow" data-scroll data-scroll-call='appear'><span>Crushed</span></div>
+        <div class="overflow" data-scroll data-scroll-call='appear'><span>Hitler's</span></div>
+        <div class="overflow" data-scroll data-scroll-call='appear'><span>Dreams of</span></div>
+        <div class="overflow" data-scroll data-scroll-call='appear'><span>Conquest.</span></div>
+        <div class="sub overflow" data-scroll data-scroll-call='appear'><span>nationalinterest.org</span></div>
       </div>
     </div>
     <div class="specs">
-      <div class="specs-numbers">
+      <canvas></canvas>
+      <div class="specs-numbers" data-scroll data-scroll-call='opacity'>
         <div class="number inline">
           <div class="title">RANGE</div>
           <div class="content">500 MILES</div>
@@ -73,74 +84,73 @@
         </div>
       </div>
       <div class="specs-content">
-        <div class="spec">
+        <div class="spec" data-scroll data-scroll-call='opacity'>
           <div class="title">ELLIPTICAL WINGS</div>
           <div class="content">The Spitfire’s unique wing design made it the mode agile fighter in the sky.</div>
         </div>
-        <div class="spec">
+        <div class="spec" data-scroll data-scroll-call='opacity'>
           <div class="title">POWERFUL ENGINE</div>
           <div class="content">The 1,130 horsepower Merlin engine gave the Spitfire a top speed of 362 mph.</div>
         </div>
-        <canvas></canvas>
       </div>
     </div>
     <div class="design">
       <div class="design-img">
-        <img src="./src/assets/images/design.png">
+        <img  data-scroll data-scroll-speed='-1.5' src="./src/assets/images/design.png">
       </div>
       <div class="design-content">
-        <p class="medium">The Spitfire played its part in many of the crucial battles of World War Two, giving the RAF a critical edge over the German Luftwaffe.</p>
-        <p class="labor">The ground breaking original design meant the plane could be upgraded with new engines and armaments. As the war progressed so did the Spitfire. After the original designer RJ Mitchell died in 1937, his successor Joe Smith developed the fighter to make it faster and more powerful.</p>
+        <p class="medium" data-scroll data-scroll-call='opacity'>The Spitfire played its part in many of the crucial battles of World War Two, giving the RAF a critical edge over the German Luftwaffe.</p>
+        <p class="labor" data-scroll data-scroll-call='opacity'>The ground breaking original design meant the plane could be upgraded with new engines and armaments. As the war progressed so did the Spitfire. After the original designer RJ Mitchell died in 1937, his successor Joe Smith developed the fighter to make it faster and more powerful.</p>
       </div>
     </div>
     <div class="britain">
       <div class="britain-title">
-        <div class="sub overflow"><span>Document 02 - Battle of Britain</span></div>
+        <div class="sub overflow" data-scroll data-scroll-call='appear'><span>Document 02 - Battle of Britain</span></div>
         <div class="title">
-          <div class="overflow"><span>1940,</span></div>
-          <div class="overflow"><span>Battle</span></div>
-          <div class="overflow"><span>of</span></div>
-          <div class="overflow"><span>Britain</span></div>
+          <div class="overflow" data-scroll data-scroll-call='appear'><span>1940,</span></div>
+          <div class="overflow" data-scroll data-scroll-call='appear'><span>Battle</span></div>
+          <div class="overflow" data-scroll data-scroll-call='appear'><span>of</span></div>
+          <div class="overflow" data-scroll data-scroll-call='appear'><span>Britain</span></div>
         </div>
       </div>
       <div class="britain-content">
         <div class="img">
-          <div class="left img-wrapper">
+          <div class="left img-wrapper" data-scroll data-scroll-speed='0.2'>
             <img src="./src/assets/images/britain01.png">
           </div>
-          <div class="right img-wrapper">
+          <div class="right img-wrapper" data-scroll data-scroll-speed='1.1'>
             <img src="./src/assets/images/britain02.png">
           </div>
         </div>
         <div class="text">
-          <p class="medium">In 1940 Hitler sent 2,600 Luftwaffe fighters and bombers to destroy the Royal Air Force.</p>
-          <p class="labor">Britain stepped up the production of fighter planes, building them faster than Germany. The Hurricanes, with their sturdy frames, took on the bombers. The Mark I Spitfires, with their superior speed and agility, were sent up to shoot down German fighters. By the end of the battle the better organised RAF had defeated the Luftwaffe and downed 1,887 German planes. The RAF lost 1,023 planes. The tide of the war started to turn. Britain was now a launch pad for future attacks on Germany.</p>
+          <p class="medium" data-scroll data-scroll-call='opacity'>In 1940 Hitler sent 2,600 Luftwaffe fighters and bombers to destroy the Royal Air Force.</p>
+          <p class="labor" data-scroll data-scroll-call='opacity'>Britain stepped up the production of fighter planes, building them faster than Germany. The Hurricanes, with their sturdy frames, took on the bombers. The Mark I Spitfires, with their superior speed and agility, were sent up to shoot down German fighters. By the end of the battle the better organised RAF had defeated the Luftwaffe and downed 1,887 German planes. The RAF lost 1,023 planes. The tide of the war started to turn. Britain was now a launch pad for future attacks on Germany.</p>
         </div>
       </div>
     </div>
     <div class="dday">
       <div class="dday-title">
-        <div class="sub overflow"><span>Document 02 - D-DAY Operation</span></div>
+        <div class="sub overflow" data-scroll data-scroll-call='appear'><span>Document 02 - D-DAY Operation</span></div>
         <div class="title">
-          <div class="overflow"><span>JUNE</span></div>
-          <div class="overflow"><span>1944,</span></div>
-          <div class="overflow"><span>D-DAY</span></div>
+          <div class="overflow" data-scroll data-scroll-call='appear'><span>JUNE</span></div>
+          <div class="overflow" data-scroll data-scroll-call='appear'><span>1944,</span></div>
+          <div class="overflow" data-scroll data-scroll-call='appear'><span>D-DAY</span></div>
         </div>
       </div>
       <div class="dday-content">
-        <p class="medium">In June 1944 Spitfires played an important part in the biggest seaborne invasion in history.</p>
-        <p class="labor">The latest Spitfire Mark IX had a 1,720 horsepower engine and was equipped with both 20mm cannons and .50 calibre machine-guns. The fighters provided crucial air support for the D-Day landings and many were adapted to be fighter-bombers to carry out attacks on German ground forces.</p>
+        <p class="medium" data-scroll data-scroll-call='opacity'>In June 1944 Spitfires played an important part in the biggest seaborne invasion in history.</p>
+        <p class="labor" data-scroll data-scroll-call='opacity'>The latest Spitfire Mark IX had a 1,720 horsepower engine and was equipped with both 20mm cannons and .50 calibre machine-guns. The fighters provided crucial air support for the D-Day landings and many were adapted to be fighter-bombers to carry out attacks on German ground forces.</p>
       </div>
       <div class="dday-imgs">
-        <div class="floating">
+        <div class="floating" data-scroll data-scroll-speed='1.3'>
           <img src="./src/assets/images/dday01.png">
         </div>
         <div class="fullscreen">
-          <img src="./src/assets/images/dday02.png">
+          <img data-scroll data-scroll-speed='-1.3' src="./src/assets/images/dday02.png">
         </div>
       </div>
     </div>
-    <div class="credits">
+    <div class="credits" data-scroll>
       <div class="credits-title medium">Credits & Sources</div>
       <div class="flex">
         <div class="credits-sources">
