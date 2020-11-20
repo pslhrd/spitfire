@@ -50951,8 +50951,9 @@ function startCanvas() {
 
   renderer.pixelRatio = 2;
   scene.background = new _three.Color(0x000000);
-  var _showAll = false;
+  var camNum = 0;
   var ratio = 10;
+  var a = 0;
 
   var _fx = (0, _effects.default)({
     renderer: renderer,
@@ -50989,12 +50990,18 @@ function startCanvas() {
         });
       });
     });
+    var ratios = [3, 3, 10];
+    var xs = [2, 4, 2];
+    var ys = [0.5, -10, 0.5];
+    var zs = [5, 10, 5];
+    var as = [0, 0, 2];
 
     _raf.default.subscribe(function (time) {
-      ratio = (0, _utils.lerp)(ratio, _showAll ? 3 : 10, 0.1);
-      camera.position.x = (0, _utils.lerp)(camera.position.x, _showAll ? 4 : 2, 0.1);
-      camera.position.y = (0, _utils.lerp)(camera.position.y, _showAll ? -10 : 0.5, 0.1);
-      camera.position.z = (0, _utils.lerp)(camera.position.z, _showAll ? 10 : 5, 0.1);
+      ratio = (0, _utils.lerp)(ratio, ratios[camNum], 0.1);
+      a = (0, _utils.lerp)(a, as[camNum], 0.1);
+      camera.position.x = (0, _utils.lerp)(camera.position.x, xs[camNum], 0.1);
+      camera.position.y = (0, _utils.lerp)(camera.position.y, ys[camNum], 0.1);
+      camera.position.z = (0, _utils.lerp)(camera.position.z, zs[camNum], 0.1);
       camera.lookAt(0, 0, 0);
       var rpm = 200;
       planes.forEach(function (plane, i) {
@@ -51007,7 +51014,7 @@ function startCanvas() {
           },
           position: {
             x: i * ratio - ratio,
-            y: 0,
+            y: -Math.abs(i * a - a),
             z: -Math.abs(i * 2 - 2)
           }
         };
@@ -51044,11 +51051,8 @@ function startCanvas() {
     });
   });
   return {
-    showAll: function showAll() {
-      _showAll = true;
-    },
-    hideAll: function hideAll() {
-      _showAll = false;
+    nextCam: function nextCam() {
+      camNum = (camNum + 1) % 3;
     }
   };
 }
@@ -51193,15 +51197,8 @@ function homeLaunch() {
   });
   var planes = (0, _PlanesCanvas.default)();
   (0, _SpecsPlane.default)();
-  var menuOpen = false;
   document.querySelector('#openMenu').addEventListener('click', function () {
-    menuOpen = !menuOpen;
-
-    if (menuOpen) {
-      planes.showAll();
-    } else {
-      planes.hideAll();
-    }
+    planes.nextCam();
   });
   imgLoad.on('done', function (instance) {
     preloader.style.display = 'none';
@@ -51282,7 +51279,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60408" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60680" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
