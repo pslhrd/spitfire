@@ -31,7 +31,7 @@
     "sass": "^1.23.3"
   },
   "dependencies": {
-    "gsap": "^3.5.1",
+    "gsap": "^3.6.0",
     "imagesloaded": "^4.1.4",
     "locomotive-scroll": "^4.0.4",
     "three": "^0.122.0"
