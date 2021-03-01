@@ -34,6 +34,6 @@
     "gsap": "^3.5.1",
     "imagesloaded": "^4.1.4",
     "locomotive-scroll": "^4.0.4",
-    "three": "^0.122.0"
+    "three": "^0.125.0"
   }
 }
